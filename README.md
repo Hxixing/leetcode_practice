@@ -1,2 +1,2 @@
 # leetcode_practice
-leetcodeÀ¢Ã‚
+leetcode practice to improve code skills.
