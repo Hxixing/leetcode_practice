@@ -24,7 +24,7 @@ public class leetcode_657 {
 	 * "LRUDLDR"
 	 *  因为有互相消除的关系，不管走多少步，只要两两消除，就能回到原点，
 	 *  所以：
-	 *  	字符串中的字符为
+	 *  	字符串中的字符为:
 	 *  		奇数，false
 	 *  		偶数：
 	 *  			全部消除，true;
@@ -51,27 +51,30 @@ public class leetcode_657 {
 	        int R_count = 0;
 	        int U_count = 0;
 	        int D_count = 0;
-	        
-	        for(int i = 0; i < ch.length; i++){
-	            switch(ch[i]){
-	                case 'L':
-	                    L_count++;
-	                    break;
-	                case 'R':
-	                    R_count++;
-	                    break;
-	                case 'U':
-	                    U_count++;
-	                    break;
-	                case 'D':
-	                    D_count++;
-	                    break;
-	            }            
-	        }
-	        if(L_count - R_count == 0 && U_count - D_count == 0){
-	            return true;
+	        if(ch.length % 2 == 0){
+		        for(int i = 0; i < ch.length; i++){
+		            switch(ch[i]){
+		                case 'L':
+		                    L_count++;
+		                    break;
+		                case 'R':
+		                    R_count++;
+		                    break;
+		                case 'U':
+		                    U_count++;
+		                    break;
+		                case 'D':
+		                    D_count++;
+		                    break;
+		            }            
+		        }
+		        if(L_count - R_count == 0 && U_count - D_count == 0){
+		            return true;
+		        }else{
+		            return false;
+		        }
 	        }else{
-	            return false;
+	        	return false;
 	        }
 	        
 	    }
